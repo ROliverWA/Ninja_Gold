@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script>    
+    $('document').ready(function(){
+        var the_time_is_now = "{{session['current_string']}}";
+            
+        $('#text_box').text(the_time_is_now);
+    })
+    </script>
     <title>Ninja Goldz</title>
 </head>
 <body>
@@ -25,25 +33,30 @@
             <div id="cave" class="cave">
                 <h1>Cave</h1>
                 <p>(earns 5-10 goldz)</p>
+                <form action="/process_money" method="post">
                 <input type="hidden" name="building" value="cave"> 
                 <input type='submit' value='Find Gold' class='find_gold'>
+            </form>
             </div>
             <div id="house" class="house">
                 <h1>House</h1>
                 <p>(earns 2-5 goldz)</p>
-                <input type="hidden" name="building" value="house"> 
+                <form action="/process_money" method="post">
+                <input type="hidden" name="building" value="house">
                 <input type='submit' value='Find Gold' class='find_gold'>
+            </form>
             </div>
             <div id="casino" class="casino">
                 <h1>Casino</h1>
                 <p>(earns/takes 0-50 goldz)</p>
+                <form action="/process_money" method="post">
                 <input type="hidden" name="building" value="casino"> 
                 <input type='submit' value='Find Gold' class='find_gold'>
+            </form>
             </div>
         </div>
-        <div id="text_box" class="text_box" style="height:200px;width:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
-            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
-            </div>            
+        <div id="text_box" class="text_box" style="height:200px;width:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto">            
+        </div>            
         </div>
     </div>
 </body>
