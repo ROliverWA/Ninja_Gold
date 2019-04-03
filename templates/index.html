@@ -10,28 +10,41 @@
 <body>
     <div id="wrapper" class="wrapper">
         <div id="head" class ="head">
-            <h1>Your Gold</h1>
-            <div id="gold_reserve" class="gold_reserve"></div>
+            <h1 id='stash'>Your Gold</h1>
+            <div id="gold_reserve" class="gold_reserve">{{session['my_trust']}}</div>
         </div>
         <div id="middle" class="middle"> 
-            <div id="farm" class="farm"></div>
-            <div id="cave" class="cave"></div>
-            <div id="house" class="house"></div>
-            <div id="casino" class="casino"></div>
-
+            <div id="farm" class="farm">
+                <h1>Farm</h1>
+                <p>(earns 10-20 goldz)</p>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="building" value="farm">
+                <input type='submit' value='Find Gold' class='find_gold'>
+                </form>
+            </div>
+            <div id="cave" class="cave">
+                <h1>Cave</h1>
+                <p>(earns 5-10 goldz)</p>
+                <input type="hidden" name="building" value="cave"> 
+                <input type='submit' value='Find Gold' class='find_gold'>
+            </div>
+            <div id="house" class="house">
+                <h1>House</h1>
+                <p>(earns 2-5 goldz)</p>
+                <input type="hidden" name="building" value="house"> 
+                <input type='submit' value='Find Gold' class='find_gold'>
+            </div>
+            <div id="casino" class="casino">
+                <h1>Casino</h1>
+                <p>(earns/takes 0-50 goldz)</p>
+                <input type="hidden" name="building" value="casino"> 
+                <input type='submit' value='Find Gold' class='find_gold'>
+            </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
+        <div id="text_box" class="text_box" style="height:200px;width:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
+            As you can see, once there's enough text in this box, the box will grow scroll bars... that's why we call it a scroll box! You could also place an image into the scroll box.
+            </div>            
+        </div>
     </div>
 </body>
 </html>

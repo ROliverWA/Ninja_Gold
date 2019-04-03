@@ -7,7 +7,7 @@
 .wrapper {
     height: 600px;
     width: 1000px;
-    background-color: red;
+    background-color: tomato;
 }
 
 .head{
@@ -26,10 +26,11 @@
     display: inline-block;
     vertical-align: top;
     border: 1px solid black;
-    margin-top: -10px;
+    margin-top: -5px;
+    font-size: larger;
 }
 
-h1 {
+#stash {
     display: inline-block;
     margin-top: -50px;
 }
@@ -54,3 +55,30 @@ h1 {
 .farm {
     margin-left: 50px;
 }
+
+.text_box {
+    
+    display: inline-block;
+    margin-left: 91px;
+    margin-top: 35px;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+}
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.find_gold {
+    margin-top: 50px;
+    margin-left: 65px;
+    height: 30px;
+    width: 75px;
+}
+
+
+
