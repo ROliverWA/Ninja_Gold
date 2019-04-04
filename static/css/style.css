@@ -1,19 +1,22 @@
 *{
     margin: 0px;
     padding: 0px;
+    color: gold;
 
 }
 
 .wrapper {
     height: 600px;
     width: 1000px;
-    background-color: tomato;
+    background-color: black;
+    display: inline-block;
+    
 }
 
 .head{
     height: 25px;
     width: 400px;
-    background-color: blue;
+    /* background-color: blue; */
     vertical-align: top;
     display: inline-block;
     padding-top: 50px;
@@ -22,12 +25,13 @@
 .gold_reserve{
     height: 25px;
     width: 125px;
-    background-color: pink;
+    /* background-color: pink; */
     display: inline-block;
     vertical-align: top;
     border: 1px solid black;
-    margin-top: -5px;
-    font-size: larger;
+    margin-top: -10px;
+    font-size: x-large;
+    margin-left: 20px;
 }
 
 #stash {
@@ -40,7 +44,7 @@
     width: 200px;
     display: inline-block;
     vertical-align: top;
-    background-color: goldenrod;
+    /* background-color: goldenrod; */
     margin-left: 25px;
     margin-top: 25px;
 }
@@ -48,8 +52,9 @@
 .middle {
     height: 250px;
     width: 1000px;
-    background-color: turquoise;
+    /* background-color: turquoise; */
     display: inline-block;
+    
 }
 
 .farm {
@@ -80,5 +85,43 @@ p {
     width: 75px;
 }
 
+.reset_button{
+    width: 75px;
+    height: 35px;
+    vertical-align: top;
+    margin-top: -50px;
+    margin-left: 650px;
+}
+
+.find_gold {
+    background-color: red;
+    border: 0px;
+    box-shadow: 2px 2px 0px 0px rgb(122, 5, 5);
+}
 
 
+.reset_button {
+    background-color: red;
+    color: black;
+    border: 0px;
+    font-weight: bold;
+}
+
+
+img {
+    
+    display: inline-block;
+}
+
+#purp_ninja{
+    width: 700px;
+    height: auto;
+    margin-left: 150px;
+    margin-top: -75px;
+}
+
+#reset_me {
+    
+    width: 750px;
+    height: 500px;
+}

@@ -8,20 +8,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script>    
     $('document').ready(function(){
-        var the_time_is_now = "{{session['current_string']}}";
-            
-        $('#text_box').text(the_time_is_now);
+        var the_time_is_now = "{{session['current_string'] | safe}}";
+        var newList = the_time_is_now.split('|');            
+        for(var i=0; i<newList.length;i++){
+            console.log(newList[i]);
+            $('#text_box').prepend(newList[i]);
+        }  
+        
+      
     })
     </script>
+    <style>
+        .lose {
+            color: red;
+        }
+        
+        .win {
+            color: green;
+        }
+    </style>
     <title>Ninja Goldz</title>
 </head>
 <body>
     <div id="wrapper" class="wrapper">
         <div id="head" class ="head">
-            <h1 id='stash'>Your Gold</h1>
+                        <h1 id='stash'>Your Gold</h1>
             <div id="gold_reserve" class="gold_reserve">{{session['my_trust']}}</div>
+            <form id="reset_me" class="reset_me" action="/reset_me" method="POST">                 
+                <input type="submit" value="Reset Me" id='reset_button' class='reset_button'>                                          
+            </form>
         </div>
-        <div id="middle" class="middle"> 
+        <div id="middle" class="middle">                  
             <div id="farm" class="farm">
                 <h1>Farm</h1>
                 <p>(earns 10-20 goldz)</p>
@@ -55,7 +72,8 @@
             </form>
             </div>
         </div>
-        <div id="text_box" class="text_box" style="height:200px;width:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto">            
+        <div id="text_box" class="text_box" style="height:200px;width:800px;border:1px solid #ccc;font:16px/26px Georgia, Garamond, Serif;overflow:auto">  
+            <p id="text_tag"></p>          
         </div>            
         </div>
     </div>
